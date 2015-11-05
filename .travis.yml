@@ -1,0 +1,16 @@
+sudo: false
+language: c
+os: linux
+
+compiler: gcc
+
+addons:
+  apt:
+    packages:
+      - libnetcdf-dev
+      - libhdf5-serial-dev
+
+script: 
+        - cmake -DCMAKE_BUILD_TYPE=Release
+        - make
+        - make test
